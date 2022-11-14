@@ -51,12 +51,12 @@ class Status(object):
         self.cPMSecond = [[],[],[],[],[],[]]
     def print(self):
         print(self.cPM)
-def init():
+def init():#初始化
     global IMAGE,tip,screen,font,maplib,Lyr,Lyb,Lx,S,matchPro
     pygame.init()
     S = Status()
     screen = pygame.display.set_mode(WINDOWSIZE, 0, 32)  # 设置游戏窗口
-    pygame.display.set_caption('EinStein wurfelt nicht')  # 设置Caption
+    pygame.display.set_caption('EinStein wurfelt nicht')  # 设置Caption标题
     font = pygame.font.SysFont("Cambria Math", TEXTSIZE,
                                bold=False, italic=False)  # 设置标题字体格式
     tip = pygame.font.SysFont("arial", TIPSIZE, bold=False, italic=False)  # 设置提示字体
@@ -88,7 +88,7 @@ def init():
         'BLUEWIN': pygame.transform.scale(pygame.image.load('picture/white/BLUEWIN.png').convert(), WINSIZE),
         'REDWIN': pygame.transform.scale(pygame.image.load('picture/white/REDWIN.png').convert(), WINSIZE),
     }
-    # 布局库
+    # 棋子的布局库
     maplib = [[6, 2, 4, 1, 5, 3],
               [6, 5, 2, 1, 4, 3],
               [1, 5, 4, 6, 2, 3],
@@ -929,7 +929,7 @@ if __name__ == '__main__':
     Human表示棋手为人类.
     '''
     Red = 'BetaCat1.0'
-    Blue = 'Demo'
+    Blue = 'Human'
     filename = os.getcwd() + "/data/" + Red + 'Vs' + Blue
     cnt = 1000
     result = startGame(Red, Blue, cnt, filename, detail=True)
