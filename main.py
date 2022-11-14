@@ -115,6 +115,7 @@ def loadImage(name, pos, size=SIZE):
     filename = "picture/white/" + name
     screen.blit(pygame.transform.scale(
         pygame.image.load(filename).convert(), size), pos)
+
 def waitForPlayerToPressKey():  # 等待按键
     while True:
         for event in pygame.event.get():
